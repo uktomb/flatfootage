@@ -8,7 +8,19 @@ namespace BlazorCore.Data
     public class TrackFootageLoader : ITrackFootageLoader
     {
 
+        public async Task<List<string>> GetTracks()
+        {
+            var result = new List<string>()
+            {
+                "cadwell",
+                "blyton",
+                "oulton"
+            };
+         
 
+            return result;
+
+        }
         public async Task<List<string>> GetVideos(string trackName)
         {
             var result = new List<string>();

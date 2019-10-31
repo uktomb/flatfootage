@@ -8,5 +8,7 @@ namespace BlazorCore.Data
     public interface ITrackFootageLoader
     {
         Task<List<string>> GetVideos(string trackName);
+
+        Task<List<string>> GetTracks();
     }
 }

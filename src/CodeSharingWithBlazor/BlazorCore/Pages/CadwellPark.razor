@@ -1,6 +1,13 @@
 ﻿@page "/cadwell"
 @inject ITrackFootageLoader TrackFootageLoader
-<h3>Cadwell Park</h3>
+<h3>tracks</h3>
+<div>
+    @foreach (var track in tracks)
+    {
+        <button value="@track" @onclick="@(() => SelectTrack(track))">@track</button>
+
+    }
+</div>
 
 @foreach (var url in urls)
 {
@@ -11,10 +18,22 @@
 }
 
 @code{
+
+    List<string> tracks;
     List<string> urls;
 
     protected override async Task OnInitializedAsync()
     {
         urls = await TrackFootageLoader.GetVideos("cadwell");
+        tracks = await TrackFootageLoader.GetTracks();
+    }
+
+}
+@functions
+{
+    void SelectTrack(string trackName)
+    {
+        urls = TrackFootageLoader.GetVideos(trackName).Result;
+        return;
     }
 }

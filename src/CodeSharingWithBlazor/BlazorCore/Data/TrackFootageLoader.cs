@@ -32,6 +32,7 @@ namespace BlazorCore.Data
                     break;
                 case "blyton":
                     result.Add("5N3pfcpolcI");
+                    result.Add("GCnRygO9JfU");
 
                     break;
                 default:

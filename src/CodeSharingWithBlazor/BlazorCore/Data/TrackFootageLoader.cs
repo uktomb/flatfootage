@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace BlazorCore.Data
 {
+    /// <summary>
+    /// loads track footage
+    /// </summary>
     public class TrackFootageLoader : ITrackFootageLoader
     {
 

@@ -30,6 +30,10 @@ namespace BlazorCore.Data
                     result.Add("LkO2JVFxNAw");
                     result.Add("GJlSr2SPRZg");
                     break;
+                case "blyton":
+                    result.Add("5N3pfcpolcI");
+
+                    break;
                 default:
                     break;
             }

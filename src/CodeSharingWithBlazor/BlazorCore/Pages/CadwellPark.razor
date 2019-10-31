@@ -1,11 +1,20 @@
 ﻿@page "/cadwell"
+@inject ITrackFootageLoader TrackFootageLoader
 <h3>Cadwell Park</h3>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LkO2JVFxNAw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LkO2JVFxNAw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LkO2JVFxNAw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LkO2JVFxNAw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@foreach (var url in urls)
+{
 
-@code {
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/@url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+}
+
+@code{
+    List<string> urls;
+
+    protected override async Task OnInitializedAsync()
+    {
+        urls = await TrackFootageLoader.GetVideos("cadwell");
+    }
 }
